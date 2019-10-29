@@ -7,7 +7,7 @@ public class Aufgabe_2_5 {
     System.out.printf( "Höhe: h = %d\n\n", h );
 
 		double dboden = u/PI;
-		double fboden = Math.pow( PI * (dboden/2), 2 );
+		double fboden = PI * Math.pow( (dboden/2), 2 );
     double fmantel = u*h;
     double fgesamt = 2*fboden+fmantel;
     double v = fboden*h;
@@ -16,6 +16,6 @@ public class Aufgabe_2_5 {
     System.out.printf( "Fläche des Dosenbodens: fboden = %.0f\n", fboden );
     System.out.printf( "Mantelfläche der Dose: fmantel = %.0f\n", fmantel );
     System.out.printf( "Gesamtfläche der Dose: fgesamt = %.0f\n", fgesamt );
-    System.out.printf( "Volumen der Dose: v = %.0f", v );
+    System.out.printf( "Volumen der Dose: v = %.0f\n", v );
   }
 }
