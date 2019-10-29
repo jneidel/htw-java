@@ -1,4 +1,4 @@
 #! /bin/sh
 
-ls *.class | entr -c java HelloWorld
+ls *.class | entr -c -r java "$1"
 
