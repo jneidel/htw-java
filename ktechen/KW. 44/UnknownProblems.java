@@ -24,7 +24,8 @@ public class UnknownProblems {
 				zahl2 = zahl2 * 2;
 				
 				System.out.println("************ zahl2: " + zahl2);
-			}
+			} else
+        break;
 		}
 
 		System.out.println("Output: " + erg);
