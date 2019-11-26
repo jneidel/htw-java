@@ -57,23 +57,4 @@ public class Aufgabe_5 {
 			 }
 		 }
 	}
-	
-  /*
-   * Required implementations
-   */
-	public static int auswahl() {
-		getInt( "Welche Auswahl soll vorgenommen werden" );
-	}
-	public static void celsiusUmrechnung() {
-		toFahrenheitLoop();
-	}
-	public static void fahrenheitUmrechnung() {
-		toCelsiusLoop();
-	}
-	public static float celsiusToFahrenheit(int celsius) {
-		return toFahrenheit(celsius);
-	}
-	public static int fahrenheitToCelsius (int fahrenheit) {
-		return toCelsius(fahrenheit);
-	}
 }
