@@ -19,23 +19,22 @@ public class Auto {
 	 */
 	public static void printMessageOfAuto(Auto a) {
 		final String BORDER = "==================================================";
-		
-		//Debug
-		//a.collisionObject();
+
+		a.collisionObject();
 		
 		System.out.println(BORDER);
-		System.out.println("Das Auto "+ a.checkSpeed(a) + a.getSpeed());
+		System.out.println("Das Auto "+ checkSpeed(a) + a.getSpeed() + " Km/h");
 		System.out.println("Die Farbe ist " + a.colour);
 		System.out.println("Die Lenkgradzahl ist " + a.getRotationOfCar());
-		System.out.println("Objekt auf der Stra√üe sind " + a.collisionObject());
+		System.out.println("Objekt auf der Straﬂe sind " + a.collisionObject());
 		System.out.println(BORDER);
 	}
 
-	private String checkSpeed(Auto a) {		
+	private static String checkSpeed(Auto a) {		
 		if(a.getSpeed() <= 0) {
 			return "steht ";
 		}else if(a.getSpeed() > 0){
-			return "f√§hrt ";
+			return "f‰hrt ";
 		}	
 		return "error";
 	}
@@ -43,12 +42,12 @@ public class Auto {
 	/*
 	 * Object alert
 	 */
-	private String collisionObject() {
+	private  String collisionObject() {
 		int randomNumber = new Random().nextInt();
 		final int biggerLowerThan = 0;
 		
 		//Debug
-		System.out.println(randomNumber);
+		//System.out.println(randomNumber);
 		
 		if(randomNumber > biggerLowerThan) {
 			return "keine Objekte";
