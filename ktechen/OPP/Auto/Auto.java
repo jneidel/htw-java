@@ -19,8 +19,9 @@ public class Auto {
 	 */
 	public static void printMessageOfAuto(Auto a) {
 		final String BORDER = "==================================================";
-
-		a.collisionObject();
+		
+		//Debug
+		//a.collisionObject();
 		
 		System.out.println(BORDER);
 		System.out.println("Das Auto "+ a.checkSpeed(a) + a.getSpeed());
