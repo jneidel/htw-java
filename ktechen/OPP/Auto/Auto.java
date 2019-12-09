@@ -21,17 +21,17 @@ public class Auto {
 		final String BORDER = "==================================================";
 		
 		System.out.println(BORDER);
-		System.out.println("Das Auto "+ isMoving() + a.getSpeed() + " Km/h");
+		System.out.println("Das Auto "+ isMoving(a) + a.getSpeed() + " Km/h");
 		System.out.println("Die Farbe ist " + a.colour);
 		System.out.println("Die Lenkgradzahl ist " + a.getRotationOfCar());
 		System.out.println("Objekt auf der Straße sind " + a.collisionObject());
 		System.out.println(BORDER);
 	}
 
-	private static String isMoving() {		
-		if(this.getSpeed() <= 0) {
+	private static String isMoving(Auto a) {
+		if(a.getSpeed() <= 0) {
 			return "steht ";
-		}else {
+		} else {
 			return "fährt ";
 		}
 	}
