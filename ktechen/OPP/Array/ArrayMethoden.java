@@ -15,8 +15,8 @@ public class ArrayMethoden {
 		System.out.printf("| Summe                       :  %d\n", ArrayMethoden.sum(array));
 		System.out.printf("| Mittelwert                  :  %d\n", ArrayMethoden.mittelwert(array));
 		System.out.printf("| Anzahl der Geradenzahlen    :  %d\n", ArrayMethoden.countGeradeZahl(array));
-		System.out.printf("| Zwei größste Zahl           :  %d\n", ArrayMethoden.zweiGroesssteZahl(array));
-		System.out.printf("| Größste Zahl                :  %d\n", ArrayMethoden.max(array));
+		System.out.printf("| Zwei grÃ¶ÃŸste Zahl           :  %d\n", ArrayMethoden.zweiGroesssteZahl(array));
+		System.out.printf("| GrÃ¶ÃŸste Zahl                :  %d\n", ArrayMethoden.max(array));
 		System.out.printf("| Kleinste Zahl               :  %d\n", ArrayMethoden.min(array));
 		System.out.print("| Alle Arrays in Quadrat      :  ");
 		/*
@@ -80,13 +80,13 @@ public class ArrayMethoden {
 	private static void quadrat(int[] array) {
 		
 		for (int i = 0; i < array.length; i++) {
-			System.out.print(Math.pow(arrayGet(array, i),2) + " ");
+			System.out.print((int)Math.pow(arrayGet(array, i),2) + " ");
 		}
 		
 	}
 	
 	/*
-	 * Größste Zahl
+	 * GrÃ¶ÃŸste Zahl
 	 */
 	private static int max(int[] array) {
 		int max = Integer.MIN_VALUE;
