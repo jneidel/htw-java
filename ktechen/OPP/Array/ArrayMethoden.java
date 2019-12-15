@@ -2,62 +2,89 @@ package OPP.Array;
 
 public class ArrayMethoden {
 
-	/*
-	 * Outcome of all function
-	 */
-	public static void printArrayInformation(int[] array,int ArrayAnStelleX)
-	{	
+	private static final String MOVENUMBER = "%10s";
+	private static final char DOUBLEPOINT = ':';
+	private static int lengthOfBorder = 90;
+	
+	public static int getLengthOfBorder() {
+		return lengthOfBorder;
+	}
+
+	public static void setLengthOfBorder(int lengthOfBorder) {
+		ArrayMethoden.lengthOfBorder = lengthOfBorder;
+	}
+
+	private static String createBorder(int length) {
 		String equals = "=";
 		String border = "";
-		for (int i = 0; i <= 100; i++) {
+		String stopper = "#";
+		
+		for (int i = 0; i <= length; i++) 
+		{
 			border += equals;
 		}
 		
-		final String BORDER = "#" + border + "#";
-		
-		System.out.println(BORDER);
-		
-		System.out.printf("| Array der Zahl x            :  %d\n", ArrayMethoden.arrayGet(array, ArrayAnStelleX), "|");
-		System.out.printf("| Summe                       :  %d\n", ArrayMethoden.sum(array));
-		System.out.printf("| Mittelwert                  :  %d\n", ArrayMethoden.mittelwert(array));
-		System.out.printf("| Anzahl der Geradenzahlen    :  %d\n", ArrayMethoden.countGeradeZahl(array));
-		System.out.printf("| Zwei größste Zahl           :  %d\n", ArrayMethoden.zweiGroesssteZahl(array));
-		System.out.printf("| Größste Zahl                :  %d\n", ArrayMethoden.max(array));
-		System.out.printf("| Kleinste Zahl               :  %d\n", ArrayMethoden.min(array));
-		System.out.print("| Alle Arrays in Quadrat      :  ");
-		/*
-		 * VOID
-		 */
-		ArrayMethoden.quadrat(array);
-		
-		System.out.println();
-		System.out.print("| Alle Geraden Arrays         :  ");
-
-		ArrayMethoden.geradeZahl(array);
-	
-		System.out.println();
-	
-		System.out.println(BORDER);
+		return stopper + border + stopper;
 	}
+	
 	/*
-	 * Search a int from Array
+	 * Outcome of all function
 	 */
-	private static int arrayGet(int[] array, int i) {
+	public static void printArrayInformation(int[] array, int ArrayAnStelleX)
+	{	
+		try {	
+			System.out.println(createBorder(lengthOfBorder));
+			System.out.printf("| Array der Zahl x            "+ MOVENUMBER +"  %d\n", DOUBLEPOINT, ArrayMethoden.arrayGet(array, ArrayAnStelleX));
+			System.out.printf("| Summe                       "+ MOVENUMBER +"  %d\n", DOUBLEPOINT, ArrayMethoden.sum(array));
+			System.out.printf("| Mittelwert                  "+ MOVENUMBER +"  %d\n", DOUBLEPOINT, ArrayMethoden.mittelwert(array));
+			System.out.printf("| Anzahl der Geradenzahlen    "+ MOVENUMBER +"  %d\n", DOUBLEPOINT, ArrayMethoden.countGeradeZahl(array));
+			System.out.printf("| Zwei größste Zahl           "+ MOVENUMBER +"  %d\n", DOUBLEPOINT, ArrayMethoden.zweiGroesssteZahl(array));
+			System.out.printf("| Größste Zahl                "+ MOVENUMBER +"  %d\n", DOUBLEPOINT, ArrayMethoden.max(array));
+			System.out.printf("| Kleinste Zahl               "+ MOVENUMBER +"  %d\n", DOUBLEPOINT, ArrayMethoden.min(array));
+			System.out.printf("| Alle Arrays ins Quadrat     "+ MOVENUMBER +"  ", DOUBLEPOINT);
+			ArrayMethoden.quadrat(array);
+			System.out.printf("\n| Alle Geraden Arrays         "+ MOVENUMBER +"  ", DOUBLEPOINT);
+			ArrayMethoden.geradeZahl(array);
+			System.out.println();	
+			System.out.println(createBorder(lengthOfBorder));
+			
+		}catch(NullPointerException e) {
+			System.out.println(e.getMessage());
+			System.out.println(createBorder(lengthOfBorder));
+			
+		}catch(RuntimeException e) {
+			System.out.println(e.getMessage().toString());
+			System.out.println(createBorder(lengthOfBorder));
+			
+		}finally {
+			System.out.println();
+		}
+	}
+	
+	/*
+	 * Search and pick one of array index
+	 */
+	private static int arrayGet(int[] array, int i) throws NullPointerException {
 		int num = 0;
-		
-		if(i < Integer.MIN_VALUE) {
-			return Integer.MIN_VALUE;
+		if(array == null) {
+			throw new NullPointerException("Array is null");
 		}
 		else {
-			for (int j = i; j < array.length; j++) {
-				num = array[i];
+			if(i < Integer.MIN_VALUE) {
+				return Integer.MIN_VALUE;
 			}
+			else {
+				for (int j = i; j < array.length; j++) {
+					num = array[i];
+				}
+			}
+			
 		}
 		return num;
 	}
 	
 	/*
-	 * Addiert das Array zusammen
+	 * summe of all number in that array
 	 */
 	private static int sum (int[] array) {
 		int num = 0;
@@ -70,7 +97,7 @@ public class ArrayMethoden {
 	}
 	
 	/*
-	 * Mittelwert
+	 * average of array
 	 */
 	private static int mittelwert(int[] array) {
 		if(array.length <= 0) {
@@ -81,7 +108,7 @@ public class ArrayMethoden {
 	}
 	
 	/*
-	 * quadrat das Array
+	 * all array in square ²
 	 */
 	private static void quadrat(int[] array) {
 		for (int i = 0; i < array.length; i++) {
@@ -90,7 +117,7 @@ public class ArrayMethoden {
 	}
 	
 	/*
-	 * Größste Zahl
+	 * Biggest number in that Array
 	 */
 	private static int max(int[] array) {
 		int max = Integer.MIN_VALUE;
@@ -105,7 +132,7 @@ public class ArrayMethoden {
 	}
 	
 	/*
-	 * kleinste Zahl
+	 * smallest number in that Array
 	 */
 	private static int min(int[] array) {
 		int min = Integer.MAX_VALUE;
@@ -115,11 +142,12 @@ public class ArrayMethoden {
 				min = arrayGet(array, i); 
 			}
 		}
+		
 		return min;
 	}
 	
 	/*
-	 * Zahlen des Array sind Gerade
+	 * Numbers of even numbers
 	 */
 	private static void geradeZahl(int[] array) {
 		for (int i = 0; i < array.length; i++) {
@@ -130,10 +158,11 @@ public class ArrayMethoden {
 	}
 
 	/*
-	 * Anzahl der Geradenzahlen
+	 * count of even numbers
 	 */
 	private static int countGeradeZahl(int[] array) {
 		int count = 0;
+		
 		for (int i = 0; i < array.length; i++) {
 			if(array[i]%2 == 0) {
 				count++;	
@@ -143,6 +172,9 @@ public class ArrayMethoden {
 		return count;
 	}
 	
+	/*
+	 * secound biggest number
+	 */
 	private static int zweiGroesssteZahl(int[] array) {
 		int max = max(array);
 		int placetwo = 0;
@@ -154,6 +186,5 @@ public class ArrayMethoden {
 		}
 		
 		return placetwo;
-	}
-	
+	}	
 }
