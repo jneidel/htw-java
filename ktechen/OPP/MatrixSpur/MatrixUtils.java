@@ -55,12 +55,22 @@ public class MatrixUtils {
 		} /*rechtecking*/ 
 		else{
 			
+			for (int i = 0; i < matrix.length; i++) {
+				for (int j = 0; j < matrix[i].length; j++) {
+					if(i == j) {
+						result += matrix[i][j];
+					}
+				}
+			}
+			//System.out.println("Test: " + result);
+			
+			/*
 			if(row == 5 && column == 5) {result = matrix[0][0] + matrix[1][1] + matrix[2][2] + matrix[3][3] + matrix[4][4];}
 			if(row == 4 && column == 4) {result = matrix[0][0] + matrix[1][1] + matrix[2][2] + matrix[3][3];}
 			if(row == 3 && column == 3) {result = matrix[0][0] + matrix[1][1] + matrix[2][2];}
 			if(row == 2 && column == 2) {result = matrix[0][0] + matrix[1][1];}
 			if(row == 1 && column == 1) {result = matrix[0][0];}
-			
+			*/
 		}
 		return result;
 	}
