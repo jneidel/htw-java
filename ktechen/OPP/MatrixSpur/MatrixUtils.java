@@ -2,6 +2,7 @@ package OPP.MatrixSpur;
 
 public class MatrixUtils {
 	
+	/*
 	private int rows = 5; //zeilen
 	private int columns = 5; //spalten
 	private double[][] matrix = new double [rows][columns]; 
@@ -25,7 +26,12 @@ public class MatrixUtils {
 	public double[][] getMatrix() {
 		return matrix;
 	}
-
+	
+	public void setMatrix(double[][] matrix) {
+		this.matrix = matrix;
+	}
+	 */
+	
 	/*
 	 * check and scan Matrix for 
 	 */
@@ -52,17 +58,9 @@ public class MatrixUtils {
 		//if(row == column) { System.out.println("Es wurde ein quadratisches Array übergeben.");  } /*quadratisch */ 
 		if(row != column) { throw new NonSquareArrayException("Es wurde kein quadratisches Array übergeben."); } /*rechtecking*/ 
 		else{ /*Quadratisch*/
-
+			
 			result = squareCalulationOfMatrix(matrix);
 			//System.out.println("Test: " + result);
-			
-			/*
-			if(row == 5 && column == 5) {result = matrix[0][0] + matrix[1][1] + matrix[2][2] + matrix[3][3] + matrix[4][4];}
-			if(row == 4 && column == 4) {result = matrix[0][0] + matrix[1][1] + matrix[2][2] + matrix[3][3];}
-			if(row == 3 && column == 3) {result = matrix[0][0] + matrix[1][1] + matrix[2][2];}
-			if(row == 2 && column == 2) {result = matrix[0][0] + matrix[1][1];}
-			if(row == 1 && column == 1) {result = matrix[0][0];}
-			*/
 		}
 		return result;
 	}
@@ -80,6 +78,4 @@ public class MatrixUtils {
 		
 		return result;
 	}
-	
-
 }
