@@ -29,7 +29,7 @@ public class MatrixUtils {
 	/*
 	 * check and scan Matrix for 
 	 */
-	public static double trace(double[][] matrix) throws NullPointerException {
+	public static double trace(double[][] matrix) throws NullPointerException, NonSquareArrayException {
 		System.out.println("Array: "); //box start 
 		
 		if(matrix == null) { throw new NullPointerException("Array is null"); }
@@ -50,7 +50,7 @@ public class MatrixUtils {
 		//System.out.println(row + " " + column);
 		
 		//if(row == column) { System.out.println("Es wurde ein quadratisches Array übergeben.");  } /*quadratisch */ 
-		if(row != column) { System.out.println("Es wurde kein quadratisches Array übergeben."); } /*rechtecking*/ 
+		if(row != column) { throw new NonSquareArrayException("Es wurde kein quadratisches Array übergeben."); } /*rechtecking*/ 
 		else{ /*Quadratisch*/
 
 			result = squareCalulationOfMatrix(matrix);
