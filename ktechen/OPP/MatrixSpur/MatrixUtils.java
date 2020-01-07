@@ -3,36 +3,6 @@ package OPP.MatrixSpur;
 public class MatrixUtils {
 	
 	/*
-	private int rows = 5; //zeilen
-	private int columns = 5; //spalten
-	private double[][] matrix = new double [rows][columns]; 
-	
-	public int getRows() {
-		return rows;
-	}
-
-	public void setRows(int rows) {
-		this.rows = rows;
-	}
-
-	public int getColumns() {
-		return columns;
-	}
-
-	public void setColumns(int columns) {
-		this.columns = columns;
-	}
-	
-	public double[][] getMatrix() {
-		return matrix;
-	}
-	
-	public void setMatrix(double[][] matrix) {
-		this.matrix = matrix;
-	}
-	 */
-	
-	/*
 	 * check and scan Matrix for 
 	 */
 	public static double trace(double[][] matrix) throws NullPointerException, NonSquareArrayException {
@@ -55,8 +25,8 @@ public class MatrixUtils {
 		
 		//System.out.println(row + " " + column);
 		
-		//if(row == column) { System.out.println("Es wurde ein quadratisches Array übergeben.");  } /*quadratisch */ 
-		if(row != column) { throw new NonSquareArrayException("Es wurde kein quadratisches Array übergeben."); } /*rechtecking*/ 
+		//if(row == column) { System.out.println("Es wurde ein quadratisches Array Ã¼bergeben.");  } /*quadratisch */ 
+		if(row != column) { throw new NonSquareArrayException("Es wurde kein quadratisches Array Ã¼bergeben."); } /*rechtecking*/ 
 		else{ /*Quadratisch*/
 			
 			result = squareCalulationOfMatrix(matrix);
