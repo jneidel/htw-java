@@ -53,7 +53,18 @@ public class TestIntArray {
 		} catch (NullPointerException e) {
 			System.out.println(e.getMessage());
 		}
-
+		
+		intArray.setArray(arrayA);
+		intArray.kopieren();
+		intArray.raender();
+		
+		System.out.println("\n");
+		
+		SortedIntArray sortedIntArray = new SortedIntArray();
+		int[] arraySquent = {2, 4, 6, 8, 10, 12, 14, 16};
+		
+		System.out.println(sortedIntArray.sequentielleSuche(10, arraySquent));
+		System.out.println(sortedIntArray.binarSuche(14, arraySquent, arraySquent[0], arraySquent.length));
 	}
 
 }

@@ -2,6 +2,11 @@ package OPP.Array;
 
 public class IntArray {
 
+	
+	public IntArray() {
+		
+	}
+	
 	private int[] array;
 
 	public int[] getArray() {
@@ -103,8 +108,29 @@ public class IntArray {
 	 * part 5
 	 */
 	
-	public int kopieren() {
-		return -1;
+	public void kopieren() {
+		System.out.println("\nInhalt von zurückgegebenem kopiertenArray:");
+		
+		if(array == null) {System.out.println("NULL"); }
+		
+		for (int i = 0; i < array.length; i++) {
+			System.out.print(array[i] + " ");
+		}
+
+	}
+	
+	
+	/*
+	 * part 6
+	 */
+	
+	public void raender() {
+		
+		if(array == null) {System.out.println("NULL"); }
+		
+		System.out.print("\n" + array[0]);
+		System.out.print(" " + array[array.length-1]);
+		
 	}
 	
 }	
